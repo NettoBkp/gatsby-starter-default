@@ -44,7 +44,7 @@ const IndexPage = () => {
         <Layout>
             <NetlifyIdentity/>
             <SEO title="Home" />
-            <h1>Hi people</h1>
+            <h1>Art System Ti</h1>
             <h2 onClick={() => { openNetlifyModal() }}>Login</h2>
             <p>Welcome to your new Gatsby site.</p>
             <p>Now go build something great.</p>
