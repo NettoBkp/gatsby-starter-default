@@ -8,7 +8,7 @@ import { Component } from "react"
 
 function iniNetlifyIdentify() {
     onmouseleave.log("deu ruim")
-    const string = document.createElement("script");
+    const script = document.createElement("script");
 
     script.src = "https://identity.netlify.com/v1/netlify-identify-widget.js"
     script.async = true;
