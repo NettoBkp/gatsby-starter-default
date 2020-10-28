@@ -19,10 +19,12 @@ function iniNetlifyIdentify() {
 function openNetlifyModal() {
     const netlifyIdentity = window.netlifyIdentity;
 
-    if (netlifyIdentity)
+    if (netlifyIdentity){
         netlifyIdentity.open();
+        console.log("open");
+        }
     else
-        console.log('netfilyIdentify not define')
+        console.log("netfilyIdentify not define")
 }
 
 class NetlifyIdentity extends Component {
