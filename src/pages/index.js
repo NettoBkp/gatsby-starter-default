@@ -10,6 +10,10 @@ import { Component } from "react"
 // Open the modal
 const netlifyIdentity = require('netlify-identity-widget');
 
+netlifyIdentity.init({
+  container: '#netlify-modal', // defaults to document.body
+  locale: 'pt' // defaults to 'en'
+});
 
 function iniNetlifyIdentify() {
     console.log("deu ruim")
@@ -24,8 +28,8 @@ function iniNetlifyIdentify() {
 function openNetlifyModal() {
     const netlifyIdentity = window.netlifyIdentity;
 
-    if (netlifyIdentity) {
-        netlifyIdentity.open();
+    if (netlifyIdentity) {        
+        netlifyIdentity.open('login');
         console.log("user");
     }
     else
@@ -45,13 +49,14 @@ const IndexPage = () => {
                 <body>
                     <h2 onClick={() => { openNetlifyModal() }}>Login</h2>
                     <button onClick={() => { openNetlifyModal() }}> GET </button>
-                            <div data-netlify-identity-button>Login with Netlify Identity</div>
+                            
                 </body>
      
 
             <SEO title="Home" />
             <h1>Art System Ti</h1>
             <h2 onClick={() => { openNetlifyModal() }}>Login</h2>
+            
             <p>Welcome to your new Gatsby site.</p>
             <p>Now go build something great.</p>
             <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
