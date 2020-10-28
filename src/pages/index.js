@@ -8,37 +8,7 @@ import { Component } from "react"
 
 
 // Open the modal
-netlifyIdentity.open();
 
-// Get the current user:
-// Available after on('init') is invoked
-const user = netlifyIdentity.currentUser();
-
-// Bind to events
-netlifyIdentity.on('init', user => console.log('init', user));
-netlifyIdentity.on('login', user => console.log('login', user));
-netlifyIdentity.on('logout', () => console.log('Logged out'));
-netlifyIdentity.on('error', err => console.error('Error', err));
-netlifyIdentity.on('open', () => console.log('Widget opened'));
-netlifyIdentity.on('close', () => console.log('Widget closed'));
-
-// Unbind from events
-netlifyIdentity.off('login'); // to unbind all registered handlers
-netlifyIdentity.off('login', handler); // to unbind a single handler
-
-// Close the modal
-netlifyIdentity.close();
-
-// Log out the user
-netlifyIdentity.logout();
-
-// Refresh the user's JWT
-// Call in on('login') handler to ensure token refreshed after it expires (1hr)  
-// Note: this method returns a promise.
-netlifyIdentity.refresh().then((jwt)=>console.log(jwt))
-
-// Change language
-netlifyIdentity.setLocale('en');
 
 
 function iniNetlifyIdentify() {
@@ -54,32 +24,30 @@ function iniNetlifyIdentify() {
 function openNetlifyModal() {
     const netlifyIdentity = window.netlifyIdentity;
 
-    if (netlifyIdentity){
+    if (netlifyIdentity) {
         netlifyIdentity.open();
-        console.log("open");
-        }
+        console.log("user");
+    }
     else
         console.log("netfilyIdentify not define")
-}
-
-class NetlifyIdentity extends Component {
-    componentDidMount() {
-        iniNetlifyIdentify();
-    }
-    render() {
-        return (
-            <div>
-
-            </div>
-        )
-    }
 }
 
 const IndexPage = () => {
 
     return (
         <Layout>
-            <NetlifyIdentity/>
+  
+                <head>
+                    <title>A static website</title>
+                    
+                       <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+                </head>
+                <body>
+                    
+                            <div data-netlify-identity-button>Login with Netlify Identity</div>
+                </body>
+     
+
             <SEO title="Home" />
             <h1>Art System Ti</h1>
             <h2 onClick={() => { openNetlifyModal() }}>Login</h2>
@@ -88,7 +56,7 @@ const IndexPage = () => {
             <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
                 <Image />
             </div>
-            <Link onClick={() => { openNetlifyModal() }}  to="/page-2/">Go to page 2</Link> <br />
+            <Link onClick={() => { openNetlifyModal() }} to="/page-2/">Go to page 2</Link> <br />
             <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
         </Layout>
     )
