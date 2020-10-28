@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import { Component } from "react"
 
 function iniNetlifyIdentify() {
-    onmouseleave.log("deu ruim")
+    console.log("deu ruim")
     const script = document.createElement("script");
 
     script.src = "https://identity.netlify.com/v1/netlify-identify-widget.js"
