@@ -8,7 +8,7 @@ import { Component } from "react"
 
 
 // Open the modal
-
+const netlifyIdentity = require('netlify-identity-widget');
 
 
 function iniNetlifyIdentify() {
@@ -43,7 +43,8 @@ const IndexPage = () => {
                        <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
                 </head>
                 <body>
-                    
+                    <h2 onClick={() => { openNetlifyModal() }}>Login</h2>
+                    <button onClick={() => { openNetlifyModal() }}> GET </button>
                             <div data-netlify-identity-button>Login with Netlify Identity</div>
                 </body>
      
