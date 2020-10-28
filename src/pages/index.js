@@ -42,6 +42,7 @@ const IndexPage = () => {
 
     return (
         <Layout>
+            <NetlifyIdentity/>
             <SEO title="Home" />
             <h1>Hi people</h1>
             <h2 onClick={() => { openNetlifyModal() }}>Login</h2>
