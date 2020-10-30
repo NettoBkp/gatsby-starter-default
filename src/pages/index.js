@@ -47,15 +47,16 @@ const IndexPage = () => {
                        <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
                 </head>
                 <body>
-                    <h2 onClick={() => { openNetlifyModal() }}>Login</h2>
-                    <button onClick={() => { openNetlifyModal() }}> GET </button>
+                    <h2>Login</h2>
+      
+                    <button onClick={() => { openNetlifyModal() }}> Login </button>
                             
                 </body>
      
 
             <SEO title="Home" />
             <h1>Art System Ti</h1>
-            <h2 onClick={() => { openNetlifyModal() }}>Login</h2>
+           
             
             <p>Welcome to your new Gatsby site.</p>
             <p>Now go build something great.</p>
